@@ -1,0 +1,5 @@
+# Internal planning docs — not for the shared repo
+plans/
+
+# macOS noise
+.DS_Store
