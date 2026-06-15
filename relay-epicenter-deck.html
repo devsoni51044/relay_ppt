@@ -432,7 +432,7 @@
 
   <!-- 4 · INTRO VIDEO (auto-fullscreen) -->
   <section class="slide vidslide" data-intro>
-    <video id="introVideo" class="introvid reveal" src="relay-new.mov" playsinline preload="auto" aria-label="Relay.green intro screen"></video>
+    <video id="introVideo" class="introvid reveal" src="relay-new.mov" muted playsinline preload="auto" aria-label="Relay.green intro screen"></video>
   </section>
 
   <!-- 5 · LIVE: THE CALL -->
@@ -444,7 +444,7 @@
 
   <!-- 6b · CUSTOMER SCREEN VIDEO — part 1 of 2 (auto-play, seamless) -->
   <section class="slide vidslide" data-intro>
-    <video id="customerVideo1" class="introvid reveal" src="CUSTOMER-FIRST.mov" playsinline preload="auto" aria-label="Customer screen"></video>
+    <video id="customerVideo1" class="introvid reveal" src="CUSTOMER-FIRST.mov" muted playsinline preload="auto" aria-label="Customer screen"></video>
     <div class="viewhud" aria-hidden="true">
       <div class="urlbar">
         <div class="lights"><i></i><i></i><i></i></div>
@@ -464,7 +464,7 @@
 
   <!-- 6c · CUSTOMER SCREEN VIDEO — part 2 of 2 (auto-play, seamless) -->
   <section class="slide vidslide" data-intro>
-    <video id="customerVideo2" class="introvid reveal" src="Customer-video.mov" playsinline preload="auto" aria-label="Customer screen"></video>
+    <video id="customerVideo2" class="introvid reveal" src="Customer-video.mov" muted playsinline preload="auto" aria-label="Customer screen"></video>
     <div class="viewhud" aria-hidden="true">
       <div class="urlbar">
         <div class="lights"><i></i><i></i><i></i></div>
@@ -484,7 +484,7 @@
 
   <!-- 7b · ENGINEER SCREEN VIDEO (auto-play, seamless) -->
   <section class="slide vidslide" data-intro>
-    <video id="engineerVideo" class="introvid reveal" src="engineer-screen_new.mp4" playsinline preload="auto" aria-label="Engineer screen"></video>
+    <video id="engineerVideo" class="introvid reveal" src="engineer-screen_new.mp4" muted playsinline preload="auto" aria-label="Engineer screen"></video>
     <div class="viewhud" aria-hidden="true">
       <div class="urlbar">
         <div class="lights"><i></i><i></i><i></i></div>
@@ -504,7 +504,7 @@
 
   <!-- 8b · SUPERVISOR SCREEN VIDEO (auto-play, seamless) -->
   <section class="slide vidslide" data-intro>
-    <video id="supervisorVideo" class="introvid reveal" src="supervisor.mov" playsinline preload="auto" aria-label="Supervisor screen"></video>
+    <video id="supervisorVideo" class="introvid reveal" src="supervisor.mov" muted playsinline preload="auto" aria-label="Supervisor screen"></video>
     <div class="viewhud" aria-hidden="true">
       <div class="urlbar">
         <div class="lights"><i></i><i></i><i></i></div>
@@ -559,17 +559,17 @@
 
   <!-- 7b · CHANNEL PARTNER VIDEO (auto-play, seamless) -->
   <section class="slide vidslide" data-intro>
-    <video id="channelVideo" class="introvid reveal" src="Channel-Partners_new.mp4" playsinline preload="auto" aria-label="Channel partner screen"></video>
+    <video id="channelVideo" class="introvid reveal" src="Channel-Partners_new.mp4" muted playsinline preload="auto" aria-label="Channel partner screen"></video>
   </section>
 
   <!-- 7c · ENTERPRISE ADMIN VIDEO — part 1 of 2 (cloned from channel partner; auto-play, seamless) -->
   <section class="slide vidslide" data-intro>
-    <video id="enterpriseVideo1" class="introvid reveal" src="enterprise-first.mp4" playsinline preload="auto" aria-label="Enterprise admin screen"></video>
+    <video id="enterpriseVideo1" class="introvid reveal" src="enterprise-first.mp4" muted playsinline preload="auto" aria-label="Enterprise admin screen"></video>
   </section>
 
   <!-- 7d · ENTERPRISE ADMIN VIDEO — part 2 of 2 (cloned from channel partner; auto-play, seamless) -->
   <section class="slide vidslide" data-intro>
-    <video id="enterpriseVideo2" class="introvid reveal" src="enterprise-second.mp4" playsinline preload="auto" aria-label="Enterprise admin screen"></video>
+    <video id="enterpriseVideo2" class="introvid reveal" src="enterprise-second.mp4" muted playsinline preload="auto" aria-label="Enterprise admin screen"></video>
   </section>
 
   <!-- 8 · THE PARTNER MODEL (waterfall) -->
@@ -750,8 +750,7 @@
     if(slides[i].querySelector('#ledgerSlot')) fireLedger(slides[i]);
     // typewriter the co-branded ref code when its slide is shown
     if(slides[i].querySelector('#refCode')) typeRef(slides[i]);
-    // intro-video slide: play from the top (called inside the nav gesture,
-    // so unmuted autoplay is allowed)
+    // intro-video slide: play muted from the top (muted autoplay always allowed)
     if(slides[i].hasAttribute('data-intro')) playIntro(slides[i]);
   }
 
@@ -759,7 +758,7 @@
     var v = slide.querySelector('video');
     if(!v) return;
     try{ v.currentTime = 0; }catch(e){}
-    v.muted = false;
+    v.muted = true;
     var p = v.play();
     if(p && p.catch){ p.catch(function(){ v.muted = true; v.play(); }); }
   }
