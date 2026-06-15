@@ -432,7 +432,7 @@
 
   <!-- 4 · INTRO VIDEO (auto-fullscreen) -->
   <section class="slide vidslide" data-intro>
-    <video id="introVideo" class="introvid reveal" src="relay-green.mov" playsinline preload="auto" aria-label="Relay.green intro screen"></video>
+    <video id="introVideo" class="introvid reveal" src="relay-new.mov" playsinline preload="auto" aria-label="Relay.green intro screen"></video>
   </section>
 
   <!-- 5 · LIVE: THE CALL -->
@@ -442,9 +442,29 @@
     <div class="flow reveal" style="--d:.25s">Customer<span class="arr">→</span>Engineer claims<span class="arr">→</span>Zoom<span class="arr">→</span>Supervisor grid</div>
   </section>
 
-  <!-- 6b · CUSTOMER SCREEN VIDEO (auto-play, seamless) -->
+  <!-- 6b · CUSTOMER SCREEN VIDEO — part 1 of 2 (auto-play, seamless) -->
   <section class="slide vidslide" data-intro>
-    <video id="customerVideo" class="introvid reveal" src="Customer_new.mp4" playsinline preload="auto" aria-label="Customer screen"></video>
+    <video id="customerVideo1" class="introvid reveal" src="CUSTOMER-FIRST.mov" playsinline preload="auto" aria-label="Customer screen"></video>
+    <div class="viewhud" aria-hidden="true">
+      <div class="urlbar">
+        <div class="lights"><i></i><i></i><i></i></div>
+        <span class="lock">🔒</span>
+        <span class="url"><b>relay.green</b>/call/live</span>
+        <span class="share"><span class="dot"></span> on call</span>
+      </div>
+      <div class="viewseg">
+        <span class="seg on"><span class="pip"></span>Customer</span>
+        <span class="vsep">→</span>
+        <span class="seg"><span class="pip"></span>Engineer</span>
+        <span class="vsep">→</span>
+        <span class="seg"><span class="pip"></span>Supervisor</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6c · CUSTOMER SCREEN VIDEO — part 2 of 2 (auto-play, seamless) -->
+  <section class="slide vidslide" data-intro>
+    <video id="customerVideo2" class="introvid reveal" src="Customer-video.mov" playsinline preload="auto" aria-label="Customer screen"></video>
     <div class="viewhud" aria-hidden="true">
       <div class="urlbar">
         <div class="lights"><i></i><i></i><i></i></div>
@@ -540,6 +560,16 @@
   <!-- 7b · CHANNEL PARTNER VIDEO (auto-play, seamless) -->
   <section class="slide vidslide" data-intro>
     <video id="channelVideo" class="introvid reveal" src="Channel-Partners_new.mp4" playsinline preload="auto" aria-label="Channel partner screen"></video>
+  </section>
+
+  <!-- 7c · ENTERPRISE ADMIN VIDEO — part 1 of 2 (cloned from channel partner; auto-play, seamless) -->
+  <section class="slide vidslide" data-intro>
+    <video id="enterpriseVideo1" class="introvid reveal" src="enterprise-first.mp4" playsinline preload="auto" aria-label="Enterprise admin screen"></video>
+  </section>
+
+  <!-- 7d · ENTERPRISE ADMIN VIDEO — part 2 of 2 (cloned from channel partner; auto-play, seamless) -->
+  <section class="slide vidslide" data-intro>
+    <video id="enterpriseVideo2" class="introvid reveal" src="enterprise-second.mp4" playsinline preload="auto" aria-label="Enterprise admin screen"></video>
   </section>
 
   <!-- 8 · THE PARTNER MODEL (waterfall) -->
@@ -654,7 +684,7 @@
 </main>
 
 <div class="pbar" aria-hidden="true"><i id="pfill"></i></div>
-<div class="counter"><b id="cnow">01</b> / <span id="ctot">16</span></div>
+<div class="counter"><b id="cnow">01</b> / <span id="ctot">25</span></div>
 
 <script>
 (function(){
