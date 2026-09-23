@@ -3,3 +3,4 @@ plans/
 
 # macOS noise
 .DS_Store
+.vercel
