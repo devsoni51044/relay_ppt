@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/relay-epicenter-deck.html" }
+    { "source": "/", "destination": "/enterprise-deck.html" }
   ]
 }
